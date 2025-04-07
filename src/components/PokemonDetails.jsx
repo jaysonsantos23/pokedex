@@ -39,6 +39,22 @@ const PokemonDetails = (props) => {
     }
     getData()
   }, [pokemonId, open]);
+  
+
+  const handlerStyleColor = (type) => {
+    switch(type) {
+      case 'rock':
+        return 'brown';
+      case 'water':
+        return 'blue';
+      case 'fire':
+         return 'red';
+      default:
+        return 'white';
+    }
+  }
+
+  style.backgroundColor = handlerStyleColor(pokemon?.types?.find(index => index)?.type.name);
 
   return (
   <>
@@ -46,7 +62,7 @@ const PokemonDetails = (props) => {
       <Modal
         open={open}
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
+        aria-labelledby="modal-modal-title"        
       >
         {load ? <Box sx={style}>
           <Typography id="modal-modal-title" variant="h5" component="h2">

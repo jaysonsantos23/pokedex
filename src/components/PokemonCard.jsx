@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 const PokemonCard = (props) => {
     const {pokemon, pokemonId} =  props;
 
+    
+
     return (
     <Card sx={{ width: 300, boxShadow: 5}}>
         <CardMedia
